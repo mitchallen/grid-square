@@ -18,7 +18,6 @@
   "author": "Mitch Allen <npm@mitchallen.com> (http://mitchallen.com)",
   "license": "ISC",
   "dependencies": {
-    "@mitchallen/factory-base": "0.1.0",
     "@mitchallen/grid-core": "^0.1.3"
   },
   "devDependencies": {
