@@ -189,9 +189,9 @@ Example output:
         <meta name="description" content="Grid Square Example">
         <!-- either cdn should work -->
         <!--
-        <script src="https://cdn.rawgit.com/mitchallen/grid-square/v0.1.2/dist/grid-square.min.js"></script>
+        <script src="https://cdn.rawgit.com/mitchallen/grid-square/v0.1.4/dist/grid-square.min.js"></script>
         -->
-        <script src="https://unpkg.com/@mitchallen/grid-square@0.1.2/dist/grid-square.min.js"></script>
+        <script src="https://unpkg.com/@mitchallen/grid-square@0.1.4/dist/grid-square.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridSquare;
           console.log(factory);
@@ -234,6 +234,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.4
+
+* updated grid-core version
 
 #### Version 0.1.3
 
