@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grid Square Example</title>
+    <meta name="description" content="Grid Square Example">
+    <!-- either cdn should work -->
+    <!--
+    <script src="https://cdn.rawgit.com/mitchallen/grid-square/v0.1.2/dist/grid-square.min.js"></script>
+    -->
+    <script src="https://unpkg.com/@mitchallen/grid-square@0.1.2/dist/grid-square.min.js"></script>
+    <script>
+      var factory = window.MitchAllen.GridSquare;
+      console.log(factory);
+      var xSize = 5,
+          ySize = 6;
+      var gs = factory.create( { x: xSize, y: ySize } );
+      gs.set( xSize-1, ySize-1, "alpha" );
+      console.log(gs);
+      gs.log(); 
+    </script>
+  </head>
+  <body>
+    <h1>Grid Square Example</h1>
+    <p>See JavaScript developer console for output.</p>
+  </body>
+</html>

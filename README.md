@@ -181,47 +181,31 @@ Example output:
 
 ### Browser Client Example
 
-You can reference a minimized client version inside an HTML script tag using one of these URL's:
-
-* https://cdn.rawgit.com/mitchallen/grid-square/v0.1.0/dist/grid-square.min.js
-* https://unpkg.com/@mitchallen/grid-square@0.1.0/dist/grid-square.min.js
-
-Adjust the URL's depending upon what version is available
-
-The __rawgit.com__ URL will pull based on the version from GitHub.
-
-The __unpkg.com__ URL will pull based on the version in npmjs.com.
-
-See http://rawgit.com and https://unpkg.com for other ways to retrieve the file. 
-
-The factory function can be retrieved from window.MitchAllen.GridSquare:
-
-    var factory = window.MitchAllen.GridSquare;
-    var xSize = 10, ySize = 5;
-    var sg = factory.Square( { x: xSize, y: ySize } );
-
-Example:
-
     <!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
         <title>Grid Square Example</title>
-        <meta name="description" content="Grid Example">
-        <!-- either cdn should work 
-        <script src="https://cdn.rawgit.com/mitchallen/grid-square/v0.1.0/dist/grid-square.min.js"></script>
-    -->
-        <script src="https://unpkg.com/@mitchallen/grid-square@0.1.0/dist/grid-square.min.js"></script>
+        <meta name="description" content="Grid Square Example">
+        <!-- either cdn should work -->
+        <!--
+        <script src="https://cdn.rawgit.com/mitchallen/grid-square/v0.1.2/dist/grid-square.min.js"></script>
+        -->
+        <script src="https://unpkg.com/@mitchallen/grid-square@0.1.2/dist/grid-square.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridSquare;
           console.log(factory);
-          var xSize = 10, ySize = 5;
-          var sg = factory.create( { x: xSize, y: ySize } );
-          sg.log(); 
+          var xSize = 5,
+              ySize = 6;
+          var gs = factory.create( { x: xSize, y: ySize } );
+          gs.set( xSize-1, ySize-1, "alpha" );
+          console.log(gs);
+          gs.log(); 
         </script>
       </head>
       <body>
         <h1>Grid Square Example</h1>
+        <p>See JavaScript developer console for output.</p>
       </body>
     </html>
 
@@ -250,6 +234,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.3
+
+* updated grid-core version, examples and documentation
 
 #### Version 0.1.2 
 
