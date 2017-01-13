@@ -256,6 +256,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.7
+
+* fixed npm start command
+
 #### Version 0.1.6
 
 * added test cases for 100% code coverage

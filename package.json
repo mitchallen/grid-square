@@ -4,7 +4,7 @@
   "description": "2D square grid",
   "main": "dist/grid-square.js",
   "scripts": {
-    "start": "node dist/grid-core.js",
+    "start": "node dist/grid-square.js",
     "test": "grunt && mocha --recursive --timeout 20000",
     "test-coverage": "./node_modules/.bin/istanbul cover _mocha -- -R spec test/**/*",
     "test-nodemon": "nodemon ./node_modules/.bin/mocha --timeout 5000",
