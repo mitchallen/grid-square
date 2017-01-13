@@ -1,6 +1,6 @@
 {
   "name": "@mitchallen/grid-square",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "2D square grid",
   "main": "dist/grid-square.js",
   "scripts": {
