@@ -116,6 +116,32 @@ describe('module smoke test', function() {
         done();
     });
 
+    it('get method with invalid x parameter should return null', function(done) {
+        let xSize = 5;
+        let ySize = 10;
+        var obj = _module.create({ x: xSize, y: ySize });
+        should.exist(obj);
+        let tX = -1;
+        let tY = 0;
+        let tValue = 5;
+        var result = obj.get(tX,tY);
+        should.not.exist(result);
+        done();
+    });
+
+    it('get method with invalid y parameter should return null', function(done) {
+        let xSize = 5;
+        let ySize = 10;
+        var obj = _module.create({ x: xSize, y: ySize });
+        should.exist(obj);
+        let tX = 0;
+        let tY = -1;
+        let tValue = 5;
+        var result = obj.get(tX,tY);
+        should.not.exist(result);
+        done();
+    });
+
     it('fill method with valid integer should fill grid with integer', function(done) {
         let xSize = 5;
         let ySize = 10;
@@ -153,6 +179,39 @@ describe('module smoke test', function() {
         grid.set(0,0,20);
         grid.set(xSize - 1, ySize - 1,30);
         grid.log();
+        done();
+    });
+
+    it('rowSize should return row size for new grid', function(done) {
+        let xSize = 4;
+        let ySize = 5;
+        var grid = _module.create({ x: xSize, y: ySize });
+        grid.rowSize(xSize-1).should.eql(ySize);
+        done();
+    });
+
+    it('rowSize should return row size', function(done) {
+        let xSize = 4;
+        let ySize = 5;
+        var grid = _module.create({ x: xSize, y: ySize });
+        grid.set(xSize-1,0,20);
+        grid.rowSize(xSize-1).should.eql(ySize);
+        done();
+    });
+
+    it('rowSize should return zero for negative row value', function(done) {
+        let xSize = 4;
+        let ySize = 5;
+        var grid = _module.create({ x: xSize, y: ySize });
+        grid.rowSize(-1).should.eql(0);
+        done();
+    });
+
+    it('rowSize should return zero for max row value', function(done) {
+        let xSize = 4;
+        let ySize = 5;
+        var grid = _module.create({ x: xSize, y: ySize });
+        grid.rowSize(xSize).should.eql(0);
         done();
     });
 });
