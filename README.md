@@ -3,6 +3,27 @@
 ==
 2D square grid
 --
+
+<p align="left">
+
+  <a href="https://travis-ci.org/mitchallen/grid-square">
+    <img src="https://img.shields.io/travis/mitchallen/grid-square.svg?style=flat-square" alt="Version">
+  </a>
+  
+  <a href="https://codecov.io/gh/mitchallen/grid-square">
+    <img src="https://codecov.io/gh/mitchallen/grid-square/branch/master/graph/badge.svg" alt="Coverage Status">
+  </a>
+  
+  <a href="https://npmjs.org/package/@mitchallen/grid-square">
+    <img src="http://img.shields.io/npm/v/@mitchallen/grid-square.svg?style=flat-square" alt="Version">
+  </a>
+  
+  <a href="https://npmjs.org/package/@mitchallen/grid-square">
+    <img src="https://img.shields.io/github/license/mitchallen/grid-square.svg">
+  </a>
+  
+</p> 
+
 * * *
 ## Installation
 
@@ -234,6 +255,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.5
+
+* integrated travis-ci and codecov.io
 
 #### Version 0.1.4
 
