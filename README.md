@@ -256,6 +256,12 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.8
+
+* updated dependency
+* updated .npmignore
+* updated client example
+
 #### Version 0.1.7
 
 * fixed npm start command
