@@ -36,6 +36,7 @@ You must use __npm__ __2.7.0__ or higher because of the scoped package name.
 
 ## Usage
 
+```js
     "use strict";
     var gridFactory = require("@mitchallen/grid-square");
     
@@ -66,6 +67,7 @@ You must use __npm__ __2.7.0__ or higher because of the scoped package name.
     } else {
     	console.log("grid value: ", result );
     }
+```
     
 ## Methods
 
@@ -81,25 +83,30 @@ The method will set xSize and ySize to 0 if no parameters are set
 
 You can call __create__ multiple times to create multiple grids.
 
+```js
     var gridFactory = require("@mitchallen/grid-square");
     
     var grid1 = gridFactory.create( { x: 5, y: 10 } );
     var grid2 = gridFactory.create( { x: 7, y: 20 } );
     
-	if(!grid1 || !grid2) ...
+  if(!grid1 || !grid2) ...
+```
 	
 ### squareGrid.xSize
 
 Returns the size of the x dimension.
 
-	grid.xSize.should.eql(5);
+```js
+  grid.xSize.should.eql(5);
+```
 	
 ### squareGrid.ySize
 
 Returns the size of the y dimension.
 
+```js
 	grid.ySize.should.eql(10);
-
+```
 
 ### grid.isCell( x, y )
 
@@ -108,9 +115,11 @@ The __x__ and __y__ parameters should be zero-based coordinates ranging from  ze
 
 The method is called internally by __get__.
 
+```js
     if(! grid.isCell( i, j ) ) {
     	console.error("parameters not within grid");
     }
+```
 
 ### grid.set( x, y, value )
 
@@ -118,9 +127,11 @@ The __x__ and __y__ values must be greater than zero. If the parameters fail val
 
 The __value__ parameter can be a number, a string or even an object.
 
+```js
     if(! grid.set( i, j, value )) {
     	console.error("couldn't set grid value");
     }
+```
 
 ### grid.get( x, y )
 
@@ -128,6 +139,7 @@ The __x__ and __y__ values are passed to the __isCell__ method internally for va
 
 The returned value can be a number, a string or even an object.
 
+```js
     let result = grid.get( i, j );
     
     if(! result) {
@@ -135,19 +147,23 @@ The returned value can be a number, a string or even an object.
     } else {
     	console.log("grid value: ", result );
     }
+```
 
 ### grid.fill(value)
 
 Fills the grid with whatever is passed in as __value__. Value can be a number, a string or even an object. Any existing values in the grid will be replaced with the new fill value.
 
+```js
     let fillValue = "foo";
     
     var result = grid.fill(fillValue);
+```
     
 ### grid.cloneArray()
 
 Returns a clone of the internal array. This is not a reference. So changes to the cloned array should not change the original.
 
+```js
 	let tX = 0;
 	let tY = 0;
 	let gridValue = 100;
@@ -169,18 +185,23 @@ Returns a clone of the internal array. This is not a reference. So changes to th
 	arr[tX][tY].should.eql(cloneValue);
 	
 	// Ensure that value does not alter original grid
-	grid.get(tX,tY).should.eql(gridValue);
+  grid.get(tX,tY).should.eql(gridValue);
+```
 	
 	
 ### grid.rows
 
 Number of rows in the grid.
 
-	var r = grid.rows;
+```js
+  var r = grid.rows;
+```
 
 ### grid.rowSize(rowIndex)
 
-	var r = grid.rowSize(1);
+```js
+  var r = grid.rowSize(1);
+```
 
 Size of row.
 
@@ -188,7 +209,9 @@ Size of row.
 
 Logs the size and contents of the internal array.
 
+```js
     grid.log();
+```
     
 Example output:
 
@@ -202,17 +225,14 @@ Example output:
 
 ### Browser Client Example
 
+```html
     <!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
         <title>Grid Square Example</title>
         <meta name="description" content="Grid Square Example">
-        <!-- either cdn should work -->
-        <!--
-        <script src="https://cdn.rawgit.com/mitchallen/grid-square/v0.1.4/dist/grid-square.min.js"></script>
-        -->
-        <script src="https://unpkg.com/@mitchallen/grid-square@0.1.4/dist/grid-square.min.js"></script>
+        <script src="https://unpkg.com/@mitchallen/grid-square@0.1.9/dist/grid-square.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridSquare;
           console.log(factory);
@@ -229,6 +249,7 @@ Example output:
         <p>See JavaScript developer console for output.</p>
       </body>
     </html>
+```
 
 * * *
 
@@ -255,6 +276,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.9
+
+* refactored
+* updated dependency
 
 #### Version 0.1.8
 

@@ -1,5 +1,5 @@
 /**
-    Module: @mitchallen/grid-square/modules/index.js
+    Module: @mitchallen/grid-square/src/index.js
     Author: Mitch Allen
 */
 
@@ -10,12 +10,12 @@
 
 var coreGrid = require('@mitchallen/grid-core');
 
-module.exports.create = (spec) => {
+module.exports.create = (spec = {}) => {
 
-    spec = spec || {};
-
-    let _x = spec.x || 0;
-    let _y = spec.y || 0;
+    let {
+      x: _x = 0,
+      y: _y = 0,
+    } = spec;
 
     _x = Math.max( _x, 0 );
     _y = Math.max( _y, 0 );
