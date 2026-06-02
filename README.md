@@ -232,7 +232,7 @@ Example output:
         <meta charset="utf-8">
         <title>Grid Square Example</title>
         <meta name="description" content="Grid Square Example">
-        <script src="https://cdn.jsdelivr.net/npm/@mitchallen/grid-square@0.1.9/dist/grid-square.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/mitchallen/grid-square@v0.1.9/dist/grid-square.min.js"></script>
         <script>
           var factory = window.MitchAllen.GridSquare;
           console.log(factory);
