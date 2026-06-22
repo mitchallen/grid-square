@@ -6,12 +6,8 @@
   "scripts": {
     "start": "node dist/grid-square.js",
     "build": "node esbuild.config.js",
-    "test": "npm run build && mocha --recursive --timeout 20000",
-    "test-coverage": "./node_modules/.bin/istanbul cover _mocha -- -R spec test/**/*",
-    "test-nodemon": "nodemon ./node_modules/.bin/mocha --timeout 5000",
-    "test-debug": "npm run build && mocha -g '@DEBUG' --recursive --timeout 20000",
-    "test-jenkins": "npm run build && --recursive --timeout 20000 -R xunit test/ > test-reports.xml",
-    "web-server": "python -m SimpleHTTPServer $PORT || 8000"
+    "test": "npm run build && node --test",
+    "test-debug": "npm run build && node --test --test-name-pattern='@DEBUG'"
   },
   "repository": {
     "type": "git",
@@ -23,17 +19,7 @@
     "@mitchallen/grid-core": "^0.1.10"
   },
   "devDependencies": {
-    "esbuild": "^0.25.5",
-    "mocha": "^11",
-    "should": "^10.0.0",
-    "supertest": "^6.3.1"
-  },
-  "overrides": {
-    "lodash": "4.17.23",
-    "minimatch": "^3.1.4",
-    "js-yaml": "3.14.2",
-    "diff": "^8.0.4",
-    "serialize-javascript": "^7.0.5"
+    "esbuild": "^0.25.5"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

@@ -10,10 +10,6 @@
     <img src="https://github.com/mitchallen/grid-square/actions/workflows/nodejs.yml/badge.svg" alt="Build Status">
   </a>
   
-  <a href="https://codecov.io/gh/mitchallen/grid-square">
-    <img src="https://codecov.io/gh/mitchallen/grid-square/branch/master/graph/badge.svg" alt="Coverage Status">
-  </a>
-  
   <a href="https://npmjs.org/package/@mitchallen/grid-square">
     <img src="http://img.shields.io/npm/v/@mitchallen/grid-square.svg?style=flat-square" alt="Version">
   </a>
@@ -255,7 +251,8 @@ Example output:
 
 ## Testing
 
-To test, go to the root folder and type (sans __$__):
+Tests run on Node.js's built-in test runner (`node --test`) — no external test
+framework is required. To test, go to the root folder and type (sans __$__):
 
     $ npm test
    
@@ -281,6 +278,9 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 * refactored
 * updated dependency
+* dependency cleanup: removed unused devDependencies (`should`, `supertest`) and the `overrides` block
+* switched test runner from mocha to Node's built-in `node --test`
+* removed stale coverage badge and dead npm scripts
 
 #### Version 0.1.8
 
