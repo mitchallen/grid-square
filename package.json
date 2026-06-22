@@ -19,9 +19,12 @@
     "@mitchallen/grid-core": "^0.1.10"
   },
   "devDependencies": {
-    "esbuild": "^0.25.5"
+    "esbuild": "^0.28.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
   }
 }

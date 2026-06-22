@@ -1,7 +1,11 @@
 "use strict";
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  try {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  } catch (e) {
+    throw mod = 0, e;
+  }
 };
 
 // node_modules/@mitchallen/grid-core/dist/grid-core.js
@@ -27,7 +31,7 @@ var require_grid_core = __commonJS({
       }
     })(function() {
       var define2, module3, exports3;
-      return (/* @__PURE__ */ function() {
+      return (/* @__PURE__ */ (function() {
         function r(e, n, t) {
           function o(i2, f) {
             if (!n[i2]) {
@@ -50,7 +54,7 @@ var require_grid_core = __commonJS({
           return o;
         }
         return r;
-      }())({ 1: [function(_dereq_, module4, exports4) {
+      })())({ 1: [function(_dereq_, module4, exports4) {
         "use strict";
         module4.exports.create = function() {
           var spec = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
