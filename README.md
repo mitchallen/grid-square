@@ -10,11 +10,11 @@
     <img src="https://github.com/mitchallen/grid-square/actions/workflows/nodejs.yml/badge.svg" alt="Build Status">
   </a>
   
-  <a href="https://npmjs.org/package/@mitchallen/grid-square">
-    <img src="http://img.shields.io/npm/v/@mitchallen/grid-square.svg?style=flat-square" alt="Version">
+  <a href="https://github.com/mitchallen/grid-square/pkgs/npm/grid-square">
+    <img src="https://img.shields.io/github/v/tag/mitchallen/grid-square.svg?label=version" alt="Version">
   </a>
   
-  <a href="https://npmjs.org/package/@mitchallen/grid-square">
+  <a href="https://github.com/mitchallen/grid-square/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/mitchallen/grid-square.svg">
   </a>
   
