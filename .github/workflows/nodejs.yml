@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: read
       packages: read
+      id-token: write
 
     strategy:
       matrix:
@@ -28,4 +29,11 @@ jobs:
     - run: npm install
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: npm test
+    - run: npm run coverage
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        use_oidc: true
+        files: ./lcov.info
+        slug: mitchallen/grid-square
+        fail_ci_if_error: false
