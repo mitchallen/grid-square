@@ -3,6 +3,9 @@
   "version": "0.1.10",
   "description": "2D square grid",
   "main": "dist/grid-square.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "node dist/grid-square.js",
     "build": "node esbuild.config.js",
