@@ -1,17 +1,41 @@
 // esbuild.config.js
 const { build } = require('esbuild');
 
-build({
+// Resolve dependencies through "main", never "browser". Sibling @mitchallen
+// packages point their "browser" field at a global-assigning IIFE that exports
+// nothing, so bundling that yields an empty module and coreGrid.create is
+// undefined at runtime.
+const shared = {
   entryPoints: ['./src/index.js'],
   bundle: true,
-  minify: false,
-  outfile: './dist/grid-square.js',
-  format: 'cjs', // changed to CommonJS for Node compatibility
-  // platform 'node' (not the default 'browser') so dependencies resolve via
-  // "main". Sibling @mitchallen packages point "browser" at a global-assigning
-  // IIFE that exports nothing; bundling that yields an empty object and
-  // coreGrid.create is undefined at runtime.
-  platform: 'node',
+  mainFields: ['main'],
   sourcemap: true,
   target: ['es2015'],
-}).catch((e) => { console.error(e); process.exit(1); });
+};
+
+const builds = [
+  // CommonJS entry point; package.json "main" resolves here.
+  {
+    ...shared,
+    outfile: './dist/grid-square.js',
+    format: 'cjs',
+    platform: 'node',
+    minify: false,
+  },
+  // Minified browser bundle, exposing window.MitchAllen.GridSquare. This is the
+  // file the README's jsDelivr link serves, so it has to be built here rather
+  // than left to drift.
+  {
+    ...shared,
+    outfile: './dist/grid-square.min.js',
+    format: 'iife',
+    globalName: 'MitchAllen.GridSquare',
+    platform: 'browser',
+    minify: true,
+  },
+];
+
+Promise.all(builds.map((options) => build(options))).catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
