@@ -1,6 +1,6 @@
 # Makefile for grid-square project
 
-.PHONY: help install build test pack-check clean publish
+.PHONY: help install build test pack-check clean
 
 default: help
 
@@ -14,7 +14,6 @@ help:
 	@echo "  test       Run tests (npm test)"
 	@echo "  pack-check Fail if the packed tarball would ship unexpected files"
 	@echo "  clean      Remove node_modules and build artifacts"
-	@echo "  publish    Publish the package (npm publish)"
 
 install:
 	npm install
@@ -32,6 +31,3 @@ pack-check:
 
 clean:
 	rm -rf node_modules
-
-publish:
-	npm publish
