@@ -12,7 +12,6 @@ jobs:
     permissions:
       contents: read
       packages: read
-      id-token: write
 
     strategy:
       matrix:
@@ -24,16 +23,15 @@ jobs:
       uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: 'https://npm.pkg.github.com'
-        scope: '@mitchallen'
+
+    # Authenticate to GitHub Packages without setup-node's registry-url/scope
+    # inputs, which write a scope mapping that breaks npm ci.
+    - run: echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> ~/.npmrc
+
     - run: npm install
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: npm run coverage
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v7
-      with:
-        use_oidc: true
-        files: ./lcov.info
-        slug: mitchallen/grid-square
-        fail_ci_if_error: false
+
+    # Runs after coverage so it proves the files allowlist excludes coverage output.
+    - run: node scripts/check-pack.js

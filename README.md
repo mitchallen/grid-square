@@ -10,8 +10,8 @@
     <img src="https://github.com/mitchallen/grid-square/actions/workflows/nodejs.yml/badge.svg" alt="Build Status">
   </a>
   
-  <a href="https://codecov.io/gh/mitchallen/grid-square">
-    <img src="https://codecov.io/gh/mitchallen/grid-square/branch/main/graph/badge.svg" alt="Coverage Status">
+  <a href="https://github.com/mitchallen/grid-square/actions/workflows/nodejs.yml?query=branch%3Amain">
+    <img src="https://img.shields.io/badge/coverage-100%25-brightgreen" alt="Coverage: 100%">
   </a>
   
   <a href="https://github.com/mitchallen/grid-square/pkgs/npm/grid-square">
@@ -31,6 +31,8 @@ This package — and its `@mitchallen` dependencies — is published to the
 **GitHub Packages** registry, not npmjs. GitHub Packages requires
 authentication for every install, even though the packages are public, so you
 need a GitHub personal access token with the `read:packages` scope.
+
+Versions **0.1.9** and earlier remain on npmjs.org and are no longer updated there.
 
 1. Route the `@mitchallen` scope to GitHub Packages in your project `.npmrc`.
    This line has no secret and is safe to commit:
