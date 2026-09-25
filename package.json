@@ -10,7 +10,7 @@
     "start": "node dist/grid-square.js",
     "build": "node esbuild.config.js",
     "test": "npm run build && node --test",
-    "coverage": "npm run build && node --test --experimental-test-coverage --test-coverage-exclude='test/**' --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=lcov.info",
+    "coverage": "npm run build && node --test --experimental-test-coverage --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 --test-coverage-exclude='test/**'",
     "test-debug": "npm run build && node --test --test-name-pattern='@DEBUG'"
   },
   "repository": {
