@@ -11,14 +11,14 @@
   </a>
   
   <a href="https://codecov.io/gh/mitchallen/grid-square">
-    <img src="https://codecov.io/gh/mitchallen/grid-square/branch/master/graph/badge.svg" alt="Coverage Status">
+    <img src="https://codecov.io/gh/mitchallen/grid-square/branch/main/graph/badge.svg" alt="Coverage Status">
   </a>
   
   <a href="https://github.com/mitchallen/grid-square/pkgs/npm/grid-square">
     <img src="https://img.shields.io/github/v/tag/mitchallen/grid-square.svg?label=version" alt="Version">
   </a>
   
-  <a href="https://github.com/mitchallen/grid-square/blob/master/LICENSE">
+  <a href="https://github.com/mitchallen/grid-square/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/mitchallen/grid-square.svg">
   </a>
   
